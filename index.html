@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enjoyMovie</title>
+    <link rel="stylesheet" href="./src/assets/css/reset.css">
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <link rel="shortcut icon" href="./src/assets/img/movie.ico" />
+</head>
+<body ng-app="myMovie" ng-controller="mainCtrl">
+    <!-- topNav S -->
+    <div class="top">
+        <nav class="nav">
+            <ul>
+                <li is-active><a href="#/home_page">首页</a></li>
+                <li is-active><a href="#/in_theaters">影院热映</a></li>
+                <li is-active><a href="#/coming_soon">即将上映</a></li>
+                <li is-active><a href="#/top250">TOP榜单</a></li>
+            </ul>
+            <div class="search">
+                <input class="my-input" type="text" placeholder="search your fav movies" ng-model="textValue">
+                <button ng-click="search()">搜索</button>
+            </div>
+        </nav>
+    </div>
+    <!-- topNav E -->
+
+    <!-- mainContent S -->
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    <!-- mainContent E -->
+
+    <!--footer S-->
+    <footer class="footer">
+        <div class="content">
+            <p>
+                <span>Created by</span>
+                <a href="https://github.com/simplexcspp">simplexcspp</a>
+                <span>(魔兽迷、热爱生活和前端的狂热份子)</span>
+            </p>
+        </div>
+    </footer>
+    <!--footer E-->
+
+    <script src="./presets/lib/angular.min.js"></script>
+    <script src="./presets/lib/angular-route.min.js"></script>
+    <script src="./src/assets/js/app.js"></script>
+    <script src="./src/assets/js/doubanJsonp.js"></script>
+    <script src="./src/assets/js/isActive.js"></script>
+    <script src="./src/template/home/home.js"></script>
+    <script src="./src/template/movieList/module.js"></script>
+    <script src="./src/template/movieDetails/module.js"></script>
+</body>
+</html>

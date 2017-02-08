@@ -1,0 +1,30 @@
+<!-- movieDetails S -->
+<div class="detail" ng-hide="detaiLoading">
+    <h1 ng-bind="movieDetails.title"></h1>
+    <div class="dt-info">
+        <div class="dti-i"><img ng-src="{{movieDetails.images.large}}" alt=""></div>
+        <div class="dti-w">
+            <p>
+                <strong>导演：</strong>
+                <span ng-repeat="item in movieDetails.directors">{{item.name}}</span>
+            </p>
+            <p>
+                <strong>主演：</strong>
+                <span ng-repeat="item in movieDetails.casts">{{item.name}}{{$last?'':'、'}}</span>
+            </p>
+            <p><strong>类型：</strong><span ng-repeat="item in movieDetails.genres">{{item}}{{$last?'':'、'}}</span></p>
+            <p><strong>国家：</strong><span ng-repeat="item in movieDetails.countries">{{item}}{{$last?'':'、'}}</span></p>
+            <p><strong>评分：</strong>{{movieDetails.rating.average}}</p>
+            <p><strong>时间：</strong>{{movieDetails.year}}</p>
+            <p><strong>又名：</strong><span ng-repeat="item in movieDetails.aka">{{item}}{{$last?'':'、'}}</span></p>
+        </div>
+    </div>
+    <h3>剧情简介:</h3>
+    <p style="color:#676767">{{movieDetails.summary}}</p>
+</div>
+<!-- movieDetails E -->
+
+<!--加载动画 S-->
+<div class="load-mask" ng-show="detaiLoading"></div>
+<div class="spinner" ng-show="detaiLoading"></div>
+<!--加载动画 E-->
